@@ -2,10 +2,23 @@ import React, { useState } from "react";
 
 const Meme = (props) => {
   const [text, setText] = useState("");
+  const [inarr, setInarr] = useState([1, 2]);
+
+  const addInput = () => {
+    setInarr([...inarr, inarr.length + 1]);
+  };
 
   const inputChange = (e) => {
     setText(e.target.value);
   };
+
+  const inputN = inarr.map((inp) => {
+    return (
+      <div>
+        <input type="text" placeholder={`Enter text ${inp}`} />
+      </div>
+    );
+  });
 
   return (
     <div className="meme">
@@ -16,6 +29,8 @@ const Meme = (props) => {
           placeholder="Enter the Text"
           onChange={inputChange}
         />
+        {inputN}
+        <button onClick={addInput}>ADD</button>
       </div>
       <div className="meme__middle">
         <svg
