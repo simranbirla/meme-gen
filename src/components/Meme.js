@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import Input from "./Input";
+import SvgText from "./SvgText";
 const Meme = (props) => {
   const [text, setText] = useState("");
   const [inarr, setInarr] = useState([1, 2]);
@@ -21,7 +22,9 @@ const Meme = (props) => {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      const dataURL = canvas.toDataURL("image/png");
+      const dataURL = canvas.toDataURL(
+        `${url.includes(".png") ? "image/png " : "image/jpeg"}`
+      );
       setBase64(dataURL);
     };
     img.src = url;
@@ -34,14 +37,6 @@ const Meme = (props) => {
     };
   }, []);
 
-  const inputN = inarr.map((inp) => {
-    return (
-      <div key={inp}>
-        <input type="text" placeholder={`Enter text ${inp}`} />
-      </div>
-    );
-  });
-
   return (
     <div className="meme">
       <p>{base64}</p>
@@ -51,7 +46,7 @@ const Meme = (props) => {
           placeholder="Enter the Text"
           onChange={inputChange}
         />
-        {inputN}
+        <Input number={inarr} />
         <button onClick={addInput}>ADD</button>
       </div>
       <div className="meme__middle">
@@ -68,13 +63,8 @@ const Meme = (props) => {
             width="100%"
             height="100%"
           />
-          <text
-            style={{ zIndex: "20", fontSize: "20px", fill: "black" }}
-            y="100px"
-          >
-            To see IF this is working
-            {text}
-          </text>
+
+          <SvgText number={inarr} />
         </svg>
       </div>
     </div>

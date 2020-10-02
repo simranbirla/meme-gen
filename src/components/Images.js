@@ -27,13 +27,14 @@ const photos = [
 const Images = () => {
   return (
     <div className="image-grid">
-      {photos.map((photo, index) => {
+      {photos.map((photo) => {
         return (
-          <Link to={`/${photo}`}>
+          <Link to={`/${photo}`} key={photo}>
             <img
               src={require(`../images/${photo}`)}
-              alt={index}
+              alt={photo}
               style={{ width: "100px", height: "100px", cursor: "pointer" }}
+              key={photo}
             />
           </Link>
         );
