@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import NewImage from "./NewImage";
 const photos = [
   "vict-baby.png",
   "ned.jpeg",
@@ -39,6 +39,7 @@ const Images = () => {
           </Link>
         );
       })}
+      <NewImage />
     </div>
   );
 };

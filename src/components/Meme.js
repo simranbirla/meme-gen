@@ -7,6 +7,7 @@ const Meme = (props) => {
   const [inarr, setInarr] = useState([1, 2]);
   const [base64, setBase64] = useState();
   const [color, setColor] = useState("black");
+  const [font, setFont] = useState(20);
   const addInput = () => {
     setInarr([...inarr, inarr.length + 1]);
   };
@@ -61,6 +62,10 @@ const Meme = (props) => {
     setColor(e.target.innerHTML);
   };
 
+  const fontSize = (e) => {
+    setFont(e.target.value);
+  };
+
   useEffect(() => {
     convertURI(require(`../images/${props.match.params.photo}`));
     return () => {
@@ -95,6 +100,20 @@ const Meme = (props) => {
             </li>
           </ul>
         </div>
+        <div className="font-size">
+          <select onChange={fontSize}>
+            <option value="16">16</option>
+            <option value="10">10</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+          </select>
+        </div>
       </div>
       <div className="meme__middle">
         <svg
@@ -102,13 +121,17 @@ const Meme = (props) => {
           height="400px"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          style={{ backgroundColor: "white", color: "white" }}
+          style={{
+            backgroundColor: "white",
+            color: "white",
+            border: "1px solid black",
+          }}
           className="svg"
           ref={(el) => setSVG(el)}
         >
           <image xlinkHref={base64} width="100%" height="100%" />
 
-          <SvgText number={inarr} text={text} color={color} />
+          <SvgText number={inarr} text={text} color={color} size={font} />
         </svg>
         <button onClick={saveImage}>Download</button>
       </div>

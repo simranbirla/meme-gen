@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import Images from "./Images";
 import Meme from "./Meme";
+import OnlineImage from "./OnlineImage";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
         <BrowserRouter>
           <Switch>
             <Route path={"/"} exact component={Images} />
-            <Route path={"/:photo"} component={Meme} />
+            <Route path={"/:photo"} exact component={Meme} />
+            <Route path={"/newImage/:link"} exact component={OnlineImage} />
           </Switch>
         </BrowserRouter>
       </div>

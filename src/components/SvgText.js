@@ -7,7 +7,11 @@ const SvgText = (props) => {
       {props.number.map((inp, index) => {
         return (
           <text
-            style={{ zIndex: "20", fontSize: "20px", fill: `${props.color}` }}
+            style={{
+              zIndex: "20",
+              fontSize: `${props.size}px`,
+              fill: `${props.color}`,
+            }}
             y={75 * inp}
           >
             {props.text[inp]}
