@@ -3,6 +3,7 @@ import Input from "./Input";
 import SvgText from "./SvgText";
 const Meme = (props) => {
   const [text, setText] = useState({});
+  const [imageRef, setImageRef] = useState();
   const [svgRef, setSVG] = useState("");
   const [inarr, setInarr] = useState([1, 2]);
   const [base64, setBase64] = useState();
@@ -10,6 +11,13 @@ const Meme = (props) => {
   const [font, setFont] = useState(20);
   const addInput = () => {
     setInarr([...inarr, inarr.length + 1]);
+  };
+
+  const decideImage = () => {
+    if (props.location.source !== undefined) {
+      return props.location.source.name;
+    }
+    return require(`../images/${props.match.params.photo}`);
   };
 
   const inputChange = (e, index) => {
@@ -67,7 +75,7 @@ const Meme = (props) => {
   };
 
   useEffect(() => {
-    convertURI(require(`../images/${props.match.params.photo}`));
+    convertURI(decideImage());
     return () => {
       setBase64("");
     };
@@ -129,10 +137,22 @@ const Meme = (props) => {
           className="svg"
           ref={(el) => setSVG(el)}
         >
-          <image xlinkHref={base64} width="100%" height="100%" />
+          <image
+            xlinkHref={base64}
+            width="100%"
+            height="100%"
+            ref={(el) => setImageRef(el)}
+          />
 
-          <SvgText number={inarr} text={text} color={color} size={font} />
+          <SvgText
+            number={inarr}
+            text={text}
+            color={color}
+            size={font}
+            imageRef={imageRef}
+          />
         </svg>
+
         <button onClick={saveImage}>Download</button>
       </div>
     </div>

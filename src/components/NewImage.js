@@ -13,7 +13,7 @@ const NewImage = () => {
         <input placeholder="enter the link" onChange={linkChange} />
         <Link
           to={{
-            pathname: `./newImage/image`,
+            pathname: `./newImage`,
             source: { name: link },
           }}
         >

@@ -12,6 +12,7 @@ const Input = (props) => {
         .map((inp) => {
           return (
             <input
+              key={inp}
               type="text"
               placeholder={`Enter the text ${inp} `}
               onChange={(e) => onInputChange(e, inp)}
