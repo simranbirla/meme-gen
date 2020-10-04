@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const SvgText = (props) => {
+  const [bound, setBound] = useState({});
+
+  const boundary = () => {
+    if (props.imageRef) {
+      setBound({
+        height: props.imageRef.getBoundingClientRect().height,
+        width: props.imageRef.getBoundingClientRect().width,
+      });
+    }
+  };
+
+  useEffect(() => {
+    boundary();
+    return;
+  }, [props.imageRef]);
+
   return (
     <>
-      {props.imageRef
-        ? console.log(props.imageRef.getBoundingClientRect())
-        : console.log("Shhhhh")}
+      {console.log(bound)}
       {props.number.map((inp, index) => {
         return (
           <text
