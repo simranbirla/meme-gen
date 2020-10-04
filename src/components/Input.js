@@ -7,18 +7,16 @@ const Input = (props) => {
 
   return (
     <div>
-      {props.number
-        .filter((inp) => inp < 5)
-        .map((inp) => {
-          return (
-            <input
-              key={inp}
-              type="text"
-              placeholder={`Enter the text ${inp} `}
-              onChange={(e) => onInputChange(e, inp)}
-            />
-          );
-        })}
+      {props.number.map((inp) => {
+        return (
+          <input
+            key={inp}
+            type="text"
+            placeholder={`Enter the text ${inp} `}
+            onChange={(e) => onInputChange(e, inp)}
+          />
+        );
+      })}
     </div>
   );
 };

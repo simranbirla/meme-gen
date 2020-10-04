@@ -9,6 +9,7 @@ const Meme = (props) => {
   const [base64, setBase64] = useState();
   const [color, setColor] = useState("black");
   const [font, setFont] = useState(20);
+
   const addInput = () => {
     setInarr([...inarr, inarr.length + 1]);
   };
