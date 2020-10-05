@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LocalImage from "./LocalImage";
 import NewImage from "./NewImage";
+import "../Style/Images.css";
+
 const photos = [
   "vict-baby.png",
   "ned.jpeg",
@@ -32,20 +34,22 @@ const Images = () => {
         <NewImage />
         <LocalImage />
       </div>
-      <div className="images__middle image-grid">
+      <div className="images__middle">
         <h2>Select an Image</h2>
-        {photos.map((photo) => {
-          return (
-            <Link to={`/${photo}`} key={photo}>
-              <img
-                src={require(`../images/${photo}`)}
-                alt={photo}
-                style={{ width: "100px", height: "100px", cursor: "pointer" }}
-                key={photo}
-              />
-            </Link>
-          );
-        })}
+        <div className="images__middle images-grid">
+          {photos.map((photo) => {
+            return (
+              <Link to={`/${photo}`} key={photo}>
+                <img
+                  src={require(`../images/${photo}`)}
+                  alt={photo}
+                  key={photo}
+                  className="meme-image"
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
