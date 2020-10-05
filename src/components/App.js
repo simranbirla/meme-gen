@@ -7,7 +7,6 @@ import Meme from "./Meme";
 const App = () => {
   return (
     <div className="app">
-      Hello Everybody
       <div className="app__top">
         <Header />
       </div>

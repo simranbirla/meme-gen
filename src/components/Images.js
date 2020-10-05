@@ -27,21 +27,26 @@ const photos = [
 
 const Images = () => {
   return (
-    <div className="image-grid">
-      {photos.map((photo) => {
-        return (
-          <Link to={`/${photo}`} key={photo}>
-            <img
-              src={require(`../images/${photo}`)}
-              alt={photo}
-              style={{ width: "100px", height: "100px", cursor: "pointer" }}
-              key={photo}
-            />
-          </Link>
-        );
-      })}
-      <NewImage />
-      <LocalImage />
+    <div className="images">
+      <div className="images__top">
+        <NewImage />
+        <LocalImage />
+      </div>
+      <div className="images__middle image-grid">
+        <h2>Select an Image</h2>
+        {photos.map((photo) => {
+          return (
+            <Link to={`/${photo}`} key={photo}>
+              <img
+                src={require(`../images/${photo}`)}
+                alt={photo}
+                style={{ width: "100px", height: "100px", cursor: "pointer" }}
+                key={photo}
+              />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  height: 130px;
+  align-items: center;
+  column-gap: 20px;
+  border-bottom: 2px solid gray;
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+}
+
+.header__left {
+  flex: 0.2;
+  text-align: center;
+}
+
+.header__left img {
+  height: 120px;
+  border-radius: 50%;
+}
+
+.header__main {
+  flex: 0.8;
+  letter-spacing: 1.3px;
+}
+
+.header__main h1 {
+  font-style: italic;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
