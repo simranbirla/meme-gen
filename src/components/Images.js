@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import LocalImage from "./LocalImage";
 import NewImage from "./NewImage";
 const photos = [
   "vict-baby.png",
@@ -40,6 +41,7 @@ const Images = () => {
         );
       })}
       <NewImage />
+      <LocalImage />
     </div>
   );
 };
