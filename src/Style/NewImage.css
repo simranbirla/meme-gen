@@ -1,0 +1,35 @@
+.newImage.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.newImage.form input {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: black;
+  opacity: 0.9;
+}
+
+.newImage.form .btn button {
+  padding: 10px 40px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+}
+
+.newImage.form input:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}

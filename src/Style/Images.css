@@ -24,11 +24,12 @@
   grid-template-columns: repeat(4, 1fr);
   row-gap: 30px;
   column-gap: 30px;
+  text-align: center;
 }
 
 .meme-image {
-  width: 100%;
+  width: 80%;
   height: 200px;
-  border: 3px solid black;
+  border: 5px double black;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }

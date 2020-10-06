@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../Style/NewImage.css";
+
 const NewImage = () => {
   const [link, setLink] = useState();
 
@@ -8,16 +10,17 @@ const NewImage = () => {
   };
 
   return (
-    <div>
-      <form>
-        <input placeholder="enter the link" onChange={linkChange} />
+    <div className="newImage">
+      <form className="newImage form">
+        <input placeholder="Enter the link" onChange={linkChange} />
         <Link
           to={{
             pathname: `./newImage`,
             source: { name: link },
           }}
+          className="btn"
         >
-          <button>Submit</button>
+          <button>GO</button>
         </Link>
       </form>
     </div>

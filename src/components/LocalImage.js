@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../Style/LocalImage.css";
 
 const LocalImage = () => {
   const [local, setLocal] = useState();
@@ -11,18 +12,22 @@ const LocalImage = () => {
     }
   };
   return (
-    <div>
-      <form>
-        <input
-          type="file"
-          placeholder="Select image local file"
-          onChange={fileChange}
-        />
+    <div className="localImage">
+      <form className="localImage__middle form">
+        <label>
+          Select an Image
+          <input
+            type="file"
+            placeholder="Select image local file"
+            onChange={fileChange}
+          />
+        </label>
         <Link
           to={{
             pathname: `./newImage`,
             source: { name: local },
           }}
+          className="btn"
         >
           <button>GO</button>
         </Link>
