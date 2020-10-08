@@ -6,7 +6,7 @@ const Input = (props) => {
   };
 
   return (
-    <div>
+    <div className="inputs">
       {props.number.map((inp) => {
         return (
           <input

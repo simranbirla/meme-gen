@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
 import SvgText from "./SvgText";
+import "../Style/Meme.css";
+
 const Meme = (props) => {
   const [text, setText] = useState({});
   const [imageRef, setImageRef] = useState();
@@ -84,57 +86,12 @@ const Meme = (props) => {
 
   return (
     <div className="meme">
-      <div className="meme__top">
-        <Input number={inarr} inputChange={inputChange} />
-        <button onClick={addInput}>ADD</button>
-        <div className="meme_top colors">
-          <ul style={{ cursor: "pointer" }} className="colors__list">
-            <li onClick={fontColor} className="color black">
-              Black
-            </li>
-            <li onClick={fontColor} className="color red">
-              Red
-            </li>
-            <li onClick={fontColor} className="color yellow">
-              Yellow
-            </li>
-            <li onClick={fontColor} className="color white">
-              White
-            </li>
-            <li onClick={fontColor} className="color blue">
-              Blue
-            </li>
-            <li onClick={fontColor} className="color green">
-              Green
-            </li>
-          </ul>
-        </div>
-        <div className="font-size">
-          <select onChange={fontSize}>
-            <option value="16">16</option>
-            <option value="10">10</option>
-            <option value="18">18</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-            <option value="35">35</option>
-            <option value="40">40</option>
-            <option value="45">45</option>
-            <option value="50">50</option>
-          </select>
-        </div>
-      </div>
-      <div className="meme__middle">
+      <div className="meme__left">
         <svg
           width="400px"
           height="400px"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          style={{
-            backgroundColor: "white",
-            color: "white",
-            border: "1px solid black",
-          }}
           className="svg"
           ref={(el) => setSVG(el)}
         >
@@ -155,6 +112,54 @@ const Meme = (props) => {
         </svg>
 
         <button onClick={saveImage}>Download</button>
+      </div>
+
+      <div className="meme__middle">
+        <Input number={inarr} inputChange={inputChange} />
+        <button onClick={addInput}>ADD</button>
+      </div>
+      <div className="meme__right">
+        <div className="meme__right colors">
+          <h3>Select Font Color:</h3>
+          <ul className="meme__right colors-list">
+            <li onClick={fontColor} className="color black">
+              Black
+            </li>
+            <li onClick={fontColor} className="color red">
+              Red
+            </li>
+            <li onClick={fontColor} className="color yellow">
+              Yellow
+            </li>
+            <li onClick={fontColor} className="color white">
+              White
+            </li>
+            <li onClick={fontColor} className="color blue">
+              Blue
+            </li>
+            <li onClick={fontColor} className="color green">
+              Green
+            </li>
+          </ul>
+        </div>
+
+        <div className="meme__right font-size">
+          <label>
+            Select a Font Size
+            <select onChange={fontSize}>
+              <option value="16">16</option>
+              <option value="10">10</option>
+              <option value="18">18</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+            </select>
+          </label>
+        </div>
       </div>
     </div>
   );

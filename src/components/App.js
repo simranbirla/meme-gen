@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import Images from "./Images";
 import Meme from "./Meme";
+import "../Style/index.css";
 
 const App = () => {
   return (

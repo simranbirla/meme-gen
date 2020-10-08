@@ -4,7 +4,7 @@ const SvgText = (props) => {
   const [bound, setBound] = useState({});
   const [drag, setDrag] = useState({ 1: false, 2: false });
   const [positionX, setPositionX] = useState({ 1: "15px", 2: "15px" });
-  const [positionY, setPositionY] = useState({ 1: "75px", 2: "150px" });
+  const [positionY, setPositionY] = useState({ 1: "15px", 2: "25px" });
   const boundary = () => {
     if (props.imageRef) {
       setBound({
@@ -22,8 +22,9 @@ const SvgText = (props) => {
   useEffect(() => {
     props.number.map((num) => {
       setDrag({ ...drag, [num]: false });
-      setPositionY({ ...positionY, [num]: 75 * num });
+      setPositionY({ ...positionY, [num]: 20 * num });
       setPositionX({ ...positionX, [num]: 15 });
+      return true;
     });
     return;
   }, [props.number]);
@@ -31,7 +32,6 @@ const SvgText = (props) => {
   const mouseDown = (e, inp) => {
     drag[inp] = true;
     document.addEventListener("mousemove", (e) => mouseMove(e, inp));
-    console.log(drag);
   };
 
   const mouseMove = (e, inp) => {

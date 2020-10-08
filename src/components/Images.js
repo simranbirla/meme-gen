@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LocalImage from "./LocalImage";
 import NewImage from "./NewImage";
@@ -32,6 +32,7 @@ const Images = () => {
     <div className="images">
       <div className="images__top">
         <NewImage />
+        <p style={{ fontSize: "3em", fontWeight: "bold", margin: "0px" }}>OR</p>
         <LocalImage />
       </div>
       <div className="images__middle">

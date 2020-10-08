@@ -1,0 +1,139 @@
+.meme {
+  display: flex;
+  column-gap: 20px;
+  flex: 1;
+  height: 100%;
+  margin: 80px 20px;
+  justify-content: space-evenly;
+}
+
+.meme__left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  text-align: center;
+}
+
+.meme__left svg {
+  padding: 10px;
+  border: 5px outset black;
+  background-color: white;
+}
+
+.meme__left button {
+  padding: 10px 30px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+  color: rgb(253, 180, 235);
+  border: none;
+  border-radius: 8px;
+  background-color: black;
+  cursor: pointer;
+  box-shadow: 3px 3px rgba(224, 219, 224, 0.7);
+}
+
+.meme__middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.meme__middle .inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.meme__middle .inputs input {
+  font-size: 25px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.meme__middle .inputs input:focus {
+  outline: none;
+}
+
+.meme__middle button {
+  width: 60%;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  color: rgb(253, 180, 235);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
+  font-size: 20px;
+  display: flex;
+  column-gap: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 60%;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list li::before {
+  content: "";
+  position: relative;
+  height: 15px;
+  width: 15px;
+  display: block;
+  background-color: gray;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list .color.green::before {
+  background-color: green;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list .color.black::before {
+  background-color: black;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list .color.red::before {
+  background-color: red;
+}
+
+.meme__right
+  .meme__right.colors
+  .meme__right.colors-list
+  .color.yellow::before {
+  background-color: yellow;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list .color.white::before {
+  background-color: white;
+}
+
+.meme__right .meme__right.colors .meme__right.colors-list .color.blue::before {
+  background-color: blue;
+}
+
+h3 {
+  font-size: 2em;
+  margin-top: 0;
+  border-bottom: 3px double gray;
+}
+
+.meme__right .meme__right.font-size {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.meme__right .meme__right.font-size select {
+  padding: 5px 20px;
+  font-size: 20px;
+  border: none;
+  margin: 0 10px;
+}
+
+.meme__right {
+  margin-top: 0;
+}

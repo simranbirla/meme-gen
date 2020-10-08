@@ -5,11 +5,19 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(103, 0, 80);
+  background: rgb(172, 13, 216);
   background: linear-gradient(
-    45deg,
-    rgba(103, 0, 80, 1) 24%,
-    rgba(232, 24, 186, 1) 54%,
-    rgba(249, 249, 249, 1) 86%
+    55deg,
+    rgba(172, 13, 216, 0.8632586823792017) 20%,
+    rgba(194, 13, 207, 0.8408497187937676) 27%,
+    rgba(219, 14, 196, 0.8604575619310224) 35%,
+    rgba(255, 0, 134, 0.75) 56%,
+    rgba(255, 0, 134, 0.6223623238357843) 73%,
+    rgba(248, 143, 199, 0.541) 95%
   );
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
 }
