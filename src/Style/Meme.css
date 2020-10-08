@@ -2,9 +2,10 @@
   display: flex;
   column-gap: 20px;
   flex: 1;
-  height: 100%;
-  margin: 80px 20px;
+  margin: 30px 20px;
   justify-content: space-evenly;
+  height: calc(100vh-150px);
+  align-items: center;
 }
 
 .meme__left {
@@ -33,6 +34,13 @@
   background-color: black;
   cursor: pointer;
   box-shadow: 3px 3px rgba(224, 219, 224, 0.7);
+  transition: all 0.2s ease-in;
+}
+
+.meme__left button:hover {
+  background-color: palevioletred;
+  color: black;
+  box-shadow: 3px 3px 10px 10px rgba(255, 220, 230, 0.75);
 }
 
 .meme__middle {
@@ -136,4 +144,29 @@ h3 {
 
 .meme__right {
   margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .meme {
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 30px 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .meme__left {
+    align-items: center;
+  }
+
+  .meme__right .meme__right.colors .meme__right.colors-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    column-gap: 5px;
+  }
+
+  .meme__right .meme__right.colors .meme__right.colors-list li {
+    font-size: 15px;
+  }
 }

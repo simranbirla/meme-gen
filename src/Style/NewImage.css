@@ -24,6 +24,12 @@
   background-color: black;
   border: none;
   border-radius: 20px;
+  transition: all 0.1s ease-out;
+}
+
+.newImage.form .btn button:hover {
+  background-color: darkmagenta;
+  border: 3px solid black;
 }
 
 .newImage.form input:focus {
@@ -32,4 +38,14 @@
 
 button:focus {
   outline: none;
+}
+
+@media (max-width: 700px) {
+  .newImage.form .btn button {
+    width: 50%;
+  }
+
+  ::placeholder {
+    text-align: center;
+  }
 }

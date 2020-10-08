@@ -32,7 +32,7 @@ const Images = () => {
     <div className="images">
       <div className="images__top">
         <NewImage />
-        <p style={{ fontSize: "3em", fontWeight: "bold", margin: "0px" }}>OR</p>
+        <p style={{ fontSize: "2em", fontWeight: "bold", margin: "0px" }}>OR</p>
         <LocalImage />
       </div>
       <div className="images__middle">

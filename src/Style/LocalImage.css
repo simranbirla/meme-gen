@@ -28,8 +28,25 @@
   background-color: black;
   border: none;
   border-radius: 20px;
+  transition: all 0.1s ease-in-out;
+}
+
+.localImage__middle.form .btn button:hover {
+  background-color: darkmagenta;
+  border: 3px solid black;
 }
 
 button:focus {
   outline: none;
+}
+
+@media (max-width: 700px) {
+  .localImage__middle.form label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .localImage__middle.form .btn button {
+    width: 50%;
+  }
 }

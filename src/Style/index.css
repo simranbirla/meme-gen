@@ -15,9 +15,14 @@ body {
     rgba(255, 0, 134, 0.6223623238357843) 73%,
     rgba(248, 143, 199, 0.541) 95%
   );
+  min-height: 100vh;
 }
 
 .app {
   display: flex;
   flex-direction: column;
+}
+
+.app__middle {
+  flex: 1;
 }
