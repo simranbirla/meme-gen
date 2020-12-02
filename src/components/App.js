@@ -8,17 +8,19 @@ import "../Style/index.css";
 const App = () => {
   return (
     <div className="app">
-      <div className="app__top">
-        <Header />
-      </div>
-      <div className="app__middle">
-        <BrowserRouter>
-          <Switch>
-            <Route path={"/"} exact component={Images} />
-            <Route path={"/:photo"} exact component={Meme} />
-          </Switch>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <>
+          <div className="app__top">
+            <Header />
+          </div>
+          <div className="app__middle">
+            <Switch>
+              <Route path={"/"} exact component={Images} />
+              <Route path={"/:photo"} exact component={Meme} />
+            </Switch>
+          </div>
+        </>
+      </BrowserRouter>
     </div>
   );
 };

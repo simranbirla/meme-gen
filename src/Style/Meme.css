@@ -19,6 +19,8 @@
   padding: 10px;
   border: 5px outset black;
   background-color: white;
+  width: 400px;
+  height: 400px;
 }
 
 .meme__left button {
@@ -168,5 +170,24 @@ h3 {
 
   .meme__right .meme__right.colors .meme__right.colors-list li {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 520px) {
+  .meme__left svg {
+    width: 80%;
+    height: 300px;
+    margin: auto;
+  }
+
+  .meme__right .meme__right.colors .meme__right.colors-list {
+    flex-direction: column;
+  }
+
+  .meme__middle .inputs input {
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    margin: auto;
   }
 }
