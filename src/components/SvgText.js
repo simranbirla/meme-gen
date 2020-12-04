@@ -44,6 +44,24 @@ const SvgText = (props) => {
     }
   };
 
+  const touchStart = (e, inp) => {
+    drag[inp] = true;
+    document.addEventListener("touchmove", (e) => touchMove(e, inp));
+  };
+
+  const touchMove = (e, inp) => {
+    if (drag[inp]) {
+      const xposition = e.clientX - bound.width;
+      const yposition = e.clientY - bound.height;
+      setPositionX({ ...positionX, [inp]: xposition });
+      setPositionY({ ...positionY, [inp]: yposition });
+    }
+  };
+
+  const touchEnd = (e, inp) => {
+    drag[inp] = false;
+  };
+
   const mouseUp = (e, inp) => {
     drag[inp] = false;
   };
@@ -64,6 +82,8 @@ const SvgText = (props) => {
             onMouseUp={(e) => mouseUp(e, inp)}
             y={positionY[inp]}
             x={positionX[inp]}
+            onTouchStart={(e) => touchStart(e, inp)}
+            onTouchEnd={(e) => touchEnd(e, inp)}
           >
             {props.text[inp]}
           </text>
