@@ -55,4 +55,8 @@
   .header__left img {
     height: 60px;
   }
+
+  .header__main h2 {
+    display: none;
+  }
 }
