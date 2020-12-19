@@ -4,10 +4,12 @@ import Header from "./Header";
 import Images from "./Images";
 import Meme from "./Meme";
 import Login from "./Login";
+import SavedImages from "./SavedImages";
 import "../Style/index.css";
 
 const App = () => {
   const [sign, setSign] = useState(false);
+  const [user, setUser] = useState({});
   return (
     <div className="app">
       <BrowserRouter>
@@ -18,14 +20,21 @@ const App = () => {
           <div className="app__middle">
             <Switch>
               <Route path={"/photos/:photo"} exact component={Meme} />
-
+              <Route path={"/saved"} exact component={SavedImages} />
               {sign ? (
                 <Route path={"/"} exact component={Images} />
               ) : (
                 <Route
                   path={"/"}
                   exact
-                  component={() => <Login sign={sign} setSign={setSign} />}
+                  component={() => (
+                    <Login
+                      sign={sign}
+                      setSign={setSign}
+                      user={user}
+                      setUser={setUser}
+                    />
+                  )}
                 />
               )}
             </Switch>

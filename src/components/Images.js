@@ -32,11 +32,10 @@ const Images = () => {
     <div className="images">
       <div className="images__top">
         <NewImage />
-        <p style={{ fontSize: "2em", fontWeight: "bold", margin: "0px" }}>OR</p>
         <LocalImage />
       </div>
       <div className="images__middle">
-        <h2>Select an Image</h2>
+        <h2>Template for some Images</h2>
         <div className="images__middle images-grid">
           {photos.map((photo) => {
             return (

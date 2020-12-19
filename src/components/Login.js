@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { provider, auth } from "../firebase";
-const Login = ({ setSign, sign }) => {
-  const [user, setUser] = useState();
+import loginImg from "../images/login.svg";
+
+const Login = ({ setSign, sign, setUser, user }) => {
   const login = () => {
     auth
       .signInWithPopup(provider)
@@ -12,7 +13,7 @@ const Login = ({ setSign, sign }) => {
       .catch((err) => alert(err));
   };
 
-  const logout = () => {
+  /*  const logout = () => {
     auth
       .signOut()
       .then((res) => {
@@ -20,16 +21,14 @@ const Login = ({ setSign, sign }) => {
         setSign(false);
       })
       .catch((err) => alert(err));
-  };
+  };*/
+
   return (
     <div>
       {console.log(user)}
-      Login here through google
-      {!sign ? (
-        <button onClick={login}>Login</button>
-      ) : (
-        <button onClick={logout}>Logout</button>
-      )}
+      <h3>Login here through google</h3>
+      <img src={loginImg} alt="login" width="400px" height="400px" />
+      <button onClick={login}>Login</button>
     </div>
   );
 };
