@@ -44,7 +44,7 @@ const Meme = (props) => {
     img.src = url;
   };
 
-  const saveImage = () => {
+  const downloadImage = () => {
     const svgEl = svgRef;
     let svgData = new XMLSerializer().serializeToString(svgEl);
     const svgSize = svgEl.getBoundingClientRect();
@@ -68,6 +68,8 @@ const Meme = (props) => {
     );
     return true;
   };
+
+  const saveImg = () => {};
 
   const fontColor = (e) => {
     setColor(e.target.innerHTML);
@@ -109,7 +111,8 @@ const Meme = (props) => {
           />
         </svg>
 
-        <button onClick={saveImage}>Download</button>
+        <button onClick={downloadImage}>Download</button>
+        <button onClick={saveImg}>Save</button>
       </div>
 
       <div className="meme__middle">

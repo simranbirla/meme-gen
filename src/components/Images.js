@@ -30,10 +30,6 @@ const photos = [
 const Images = () => {
   return (
     <div className="images">
-      <div className="images__top">
-        <NewImage />
-        <LocalImage />
-      </div>
       <div className="images__middle">
         <h2>Template for some Images</h2>
         <div className="images__middle images-grid">

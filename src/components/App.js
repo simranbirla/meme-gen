@@ -6,6 +6,7 @@ import Meme from "./Meme";
 import Login from "./Login";
 import SavedImages from "./SavedImages";
 import "../Style/index.css";
+import Upload from "./Upload";
 
 const App = () => {
   const [sign, setSign] = useState(false);
@@ -21,6 +22,7 @@ const App = () => {
             <Switch>
               <Route path={"/photos/:photo"} exact component={Meme} />
               <Route path={"/saved"} exact component={SavedImages} />
+              <Route path="/upload" exact component={Upload} />
               {sign ? (
                 <Route path={"/"} exact component={Images} />
               ) : (
