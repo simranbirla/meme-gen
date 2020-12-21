@@ -39,7 +39,7 @@ const Images = () => {
         <div className="images__middle images-grid">
           {photos.map((photo) => {
             return (
-              <Link to={`/${photo}`} key={photo}>
+              <Link to={`/photos/${photo}`} key={photo}>
                 <img
                   src={require(`../images/${photo}`)}
                   alt={photo}

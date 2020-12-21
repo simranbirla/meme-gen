@@ -15,7 +15,7 @@ const App = () => {
       <BrowserRouter>
         <>
           <div className="app__top">
-            <Header />
+            <Header setUser={setUser} setSign={setSign} sign={sign} />
           </div>
           <div className="app__middle">
             <Switch>
