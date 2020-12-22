@@ -5,7 +5,7 @@ import LocalImage from "./LocalImage";
 import "../Style/LocalImage.css";
 
 const Upload = () => {
-  const [local, setLocal] = useState();
+  const [local, setLocal] = useState("");
   return (
     <div>
       <NewImage link={local} setLink={setLocal} />

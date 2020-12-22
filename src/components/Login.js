@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { provider, auth } from "../firebase";
 import loginImg from "../images/login.svg";
 
-const Login = ({ setSign, sign, setUser, user }) => {
+const Login = ({ setSign, setUser, user }) => {
   const login = () => {
     auth
       .signInWithPopup(provider)

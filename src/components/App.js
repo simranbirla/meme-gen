@@ -10,7 +10,7 @@ import Upload from "./Upload";
 
 const App = () => {
   const [sign, setSign] = useState(false);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState();
   return (
     <div className="app">
       <BrowserRouter>
@@ -20,17 +20,30 @@ const App = () => {
           </div>
           <div className="app__middle">
             <Switch>
-              <Route path={"/photos/:photo"} exact component={Meme} />
-              <Route path={"/saved"} exact component={SavedImages} />
+              <Route
+                path={"/photos/:photo"}
+                exact
+                render={(props) => <Meme {...props} user={user} />}
+              />
+              <Route
+                path={"/saved"}
+                exact
+                render={(props) => <SavedImages {...props} user={user} />}
+              />
               <Route path="/upload" exact component={Upload} />
               {sign ? (
-                <Route path={"/"} exact component={Images} />
+                <Route
+                  path={"/"}
+                  exact
+                  render={(props) => <Images {...props} user={user} />}
+                />
               ) : (
                 <Route
                   path={"/"}
                   exact
-                  component={() => (
+                  render={(props) => (
                     <Login
+                      {...props}
                       sign={sign}
                       setSign={setSign}
                       user={user}

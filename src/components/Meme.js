@@ -84,7 +84,7 @@ const Meme = (props) => {
     meme.onload = function () {
       canvas.getContext("2d").drawImage(meme, 0, 0);
       const canvasData = canvas.toDataURL("image/png");
-      saveImage(canvasData, setProgress, "user3");
+      saveImage(canvasData, setProgress, props.user.uid);
     };
     meme.setAttribute(
       "src",

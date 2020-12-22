@@ -25,7 +25,7 @@ const photos = [
   "web.png",
 ];
 
-const Images = () => {
+const Images = ({ user }) => {
   return (
     <div className="images">
       <div className="images__middle">
