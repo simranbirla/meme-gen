@@ -28,7 +28,9 @@ const App = () => {
               <Route
                 path={"/saved"}
                 exact
-                render={(props) => <SavedImages {...props} user={user} />}
+                render={(props) => (
+                  <SavedImages {...props} user={user} sign={sign} />
+                )}
               />
               <Route path="/upload" exact component={Upload} />
               {sign ? (

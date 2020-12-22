@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
+import Login from "./Login";
 import SvgText from "./SvgText";
 import saveImage from "./saveImage";
 import "../Style/Meme.css";
@@ -110,82 +111,88 @@ const Meme = (props) => {
   }, []);
 
   return (
-    <div className="meme">
-      <div className="meme__left">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          className="svg"
-          ref={(el) => setSVG(el)}
-        >
-          <image
-            xlinkHref={base64}
-            width="100%"
-            height="100%"
-            ref={(el) => setImageRef(el)}
-          />
+    <>
+      {props.user ? (
+        <div className="meme">
+          <div className="meme__left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              className="svg"
+              ref={(el) => setSVG(el)}
+            >
+              <image
+                xlinkHref={base64}
+                width="100%"
+                height="100%"
+                ref={(el) => setImageRef(el)}
+              />
 
-          <SvgText
-            number={inarr}
-            text={text}
-            color={color}
-            size={font}
-            imageRef={imageRef}
-          />
-        </svg>
+              <SvgText
+                number={inarr}
+                text={text}
+                color={color}
+                size={font}
+                imageRef={imageRef}
+              />
+            </svg>
 
-        <button onClick={downloadImage}>Download</button>
-        <button onClick={saveImg}>Save</button>
-      </div>
+            <button onClick={downloadImage}>Download</button>
+            <button onClick={saveImg}>Save</button>
+          </div>
 
-      <div className="meme__middle">
-        <Input number={inarr} inputChange={inputChange} />
-        <button onClick={addInput}>ADD</button>
-      </div>
-      <div className="meme__right">
-        <div className="meme__right colors">
-          <h3>Select Font Color:</h3>
-          <ul className="meme__right colors-list">
-            <li onClick={fontColor} className="color black">
-              Black
-            </li>
-            <li onClick={fontColor} className="color red">
-              Red
-            </li>
-            <li onClick={fontColor} className="color yellow">
-              Yellow
-            </li>
-            <li onClick={fontColor} className="color white">
-              White
-            </li>
-            <li onClick={fontColor} className="color blue">
-              Blue
-            </li>
-            <li onClick={fontColor} className="color green">
-              Green
-            </li>
-          </ul>
+          <div className="meme__middle">
+            <Input number={inarr} inputChange={inputChange} />
+            <button onClick={addInput}>ADD</button>
+          </div>
+          <div className="meme__right">
+            <div className="meme__right colors">
+              <h3>Select Font Color:</h3>
+              <ul className="meme__right colors-list">
+                <li onClick={fontColor} className="color black">
+                  Black
+                </li>
+                <li onClick={fontColor} className="color red">
+                  Red
+                </li>
+                <li onClick={fontColor} className="color yellow">
+                  Yellow
+                </li>
+                <li onClick={fontColor} className="color white">
+                  White
+                </li>
+                <li onClick={fontColor} className="color blue">
+                  Blue
+                </li>
+                <li onClick={fontColor} className="color green">
+                  Green
+                </li>
+              </ul>
+            </div>
+
+            <div className="meme__right font-size">
+              <label>
+                Select a Font Size
+                <select onChange={fontSize}>
+                  <option value="16">16</option>
+                  <option value="10">10</option>
+                  <option value="18">18</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="35">35</option>
+                  <option value="40">40</option>
+                  <option value="45">45</option>
+                  <option value="50">50</option>
+                </select>
+              </label>
+            </div>
+          </div>
         </div>
-
-        <div className="meme__right font-size">
-          <label>
-            Select a Font Size
-            <select onChange={fontSize}>
-              <option value="16">16</option>
-              <option value="10">10</option>
-              <option value="18">18</option>
-              <option value="20">20</option>
-              <option value="25">25</option>
-              <option value="30">30</option>
-              <option value="35">35</option>
-              <option value="40">40</option>
-              <option value="45">45</option>
-              <option value="50">50</option>
-            </select>
-          </label>
-        </div>
-      </div>
-    </div>
+      ) : (
+        <Login />
+      )}
+    </>
   );
 };
 
