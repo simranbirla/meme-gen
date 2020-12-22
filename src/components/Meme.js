@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
 import SvgText from "./SvgText";
+import saveImage from "./saveImage";
 import "../Style/Meme.css";
 
 const Meme = (props) => {
@@ -11,7 +12,7 @@ const Meme = (props) => {
   const [base64, setBase64] = useState();
   const [color, setColor] = useState("black");
   const [font, setFont] = useState(20);
-
+  const [progress, setProgress] = useState(0);
   const addInput = () => {
     setInarr([...inarr, inarr.length + 1]);
   };
@@ -41,6 +42,7 @@ const Meme = (props) => {
       );
       setBase64(dataURL);
     };
+    console.log(url);
     img.src = url;
   };
 
@@ -59,6 +61,7 @@ const Meme = (props) => {
       const a = document.createElement("a");
       a.download = "meme.png";
       a.href = canvasData;
+      console.log(canvasData);
       document.body.appendChild(a);
       a.click();
     };
@@ -69,7 +72,27 @@ const Meme = (props) => {
     return true;
   };
 
-  const saveImg = () => {};
+  const saveImg = () => {
+    const svgEl = svgRef;
+    let svgData = new XMLSerializer().serializeToString(svgEl);
+    const svgSize = svgEl.getBoundingClientRect();
+    const canvas = document.createElement("canvas");
+    canvas.setAttribute("id", "canvas");
+    canvas.height = svgSize.height;
+    canvas.width = svgSize.width;
+    const meme = new Image();
+    meme.onload = function () {
+      canvas.getContext("2d").drawImage(meme, 0, 0);
+      const canvasData = canvas.toDataURL("image/png");
+      saveImage(canvasData, setProgress, "user3");
+    };
+    meme.setAttribute(
+      "src",
+      "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgData)))
+    );
+
+    return true;
+  };
 
   const fontColor = (e) => {
     setColor(e.target.innerHTML);

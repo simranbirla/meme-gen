@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LocalImage from "./LocalImage";
-import NewImage from "./NewImage";
 import "../Style/Images.css";
 
 const photos = [
