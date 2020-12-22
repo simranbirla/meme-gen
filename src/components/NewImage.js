@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "../Style/NewImage.css";
 
-const NewImage = () => {
-  const [link, setLink] = useState();
-
+const NewImage = ({ setLink }) => {
   const linkChange = (e) => {
     setLink(e.target.value);
   };
@@ -13,15 +10,6 @@ const NewImage = () => {
     <div className="newImage">
       <form className="newImage form">
         <input placeholder="Enter the link" onChange={linkChange} />
-        <Link
-          to={{
-            pathname: `.photos/newImage`,
-            source: { name: link },
-          }}
-          className="btn"
-        >
-          <button>GO</button>
-        </Link>
       </form>
     </div>
   );

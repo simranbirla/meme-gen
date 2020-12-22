@@ -13,6 +13,7 @@ const Meme = (props) => {
   const [color, setColor] = useState("black");
   const [font, setFont] = useState(20);
   const [progress, setProgress] = useState(0);
+
   const addInput = () => {
     setInarr([...inarr, inarr.length + 1]);
   };
@@ -42,7 +43,7 @@ const Meme = (props) => {
       );
       setBase64(dataURL);
     };
-    console.log(url);
+    //console.log(url);
     img.src = url;
   };
 
@@ -61,7 +62,6 @@ const Meme = (props) => {
       const a = document.createElement("a");
       a.download = "meme.png";
       a.href = canvasData;
-      console.log(canvasData);
       document.body.appendChild(a);
       a.click();
     };
