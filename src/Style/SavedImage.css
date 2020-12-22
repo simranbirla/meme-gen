@@ -1,0 +1,9 @@
+.share-btns {
+  opacity: 0;
+  z-index: 0;
+}
+
+.share-btns.show {
+  opacity: 1;
+  z-index: 1;
+}
