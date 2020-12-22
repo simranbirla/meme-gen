@@ -1,5 +1,8 @@
 import { storage, db } from "../firebase";
 import firebase from "firebase";
+import { v4 as uuidv4 } from "uuid";
+
+const file_name = uuidv4();
 
 const addDB = async (user, memeURL) => {
   const databaseref = db.collection("photos").doc(user);
@@ -18,7 +21,7 @@ const addStorage = (image, setbar, user) => {
   const uploading = firebase
     .storage()
     .ref("/images")
-    .child("file_name")
+    .child(file_name)
     .putString(image, "data_url", { contentType: "image/png" });
 
   uploading.on(
@@ -35,7 +38,7 @@ const addStorage = (image, setbar, user) => {
     () => {
       storage
         .ref("/images")
-        .child("file_name")
+        .child(file_name)
         .getDownloadURL()
         .then((url) => {
           addDB(user, url);
