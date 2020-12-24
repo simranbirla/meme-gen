@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { Link } from "react-router-dom";
+import authImg from "../images/auth.svg";
 import "../Style/SavedImage.css";
+import "../Style/index.css";
 
 import {
   WhatsappShareButton,
@@ -28,10 +30,10 @@ const SavedImages = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="saved">
       {memes && props.sign ? (
         memes.memes.map((meme) => (
-          <>
+          <div className="saved-img">
             <img src={meme} />
             <div className="share-btns">
               <WhatsappShareButton
@@ -71,12 +73,15 @@ const SavedImages = (props) => {
                 <PocketIcon size={32} round />
               </PocketShareButton>
             </div>
-          </>
+          </div>
         ))
       ) : (
-        <h3>
-          <Link to="/">Please Login</Link>{" "}
-        </h3>
+        <div className="login-link">
+          <img src={authImg} alt="auth" />
+          <h3 style={{ textAlign: "center" }}>
+            <Link to="/">Please Login</Link>{" "}
+          </h3>
+        </div>
       )}
     </div>
   );

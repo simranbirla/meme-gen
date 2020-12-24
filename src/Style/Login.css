@@ -10,4 +10,14 @@
 .login button {
   padding: 10px 20px;
   font-size: 15px;
+  background-color: #030344;
+  color: lightskyblue;
+  box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.login button:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none;
 }

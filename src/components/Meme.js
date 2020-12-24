@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
-import Login from "./Login";
+import { Link } from "react-router-dom";
 import SvgText from "./SvgText";
 import saveImage from "./saveImage";
 import "../Style/Meme.css";
-
+import "../Style/index.css";
+import authImg from "../images/auth.svg";
 const Meme = (props) => {
   const [text, setText] = useState({});
   const [imageRef, setImageRef] = useState();
@@ -224,7 +225,12 @@ const Meme = (props) => {
           </div>
         </div>
       ) : (
-        <Login />
+        <div className="login-link">
+          <img src={authImg} alt="auth" />
+          <h3 style={{ textAlign: "center" }}>
+            <Link to="/">Please Login</Link>{" "}
+          </h3>
+        </div>
       )}
     </>
   );

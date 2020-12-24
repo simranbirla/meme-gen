@@ -15,3 +15,24 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.login-link {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  justify-content: center;
+}
+
+.login-link img {
+  width: 50vw;
+  height: 50vh;
+  text-align: center;
+  margin: auto;
+}
+
+.login-link a {
+  text-decoration: none;
+  padding: 1em;
+  border: 2px outset #030344;
+  border-radius: 5px;
+}

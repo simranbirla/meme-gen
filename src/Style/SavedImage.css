@@ -1,9 +1,32 @@
 .share-btns {
-  opacity: 0;
-  z-index: 0;
-}
-
-.share-btns.show {
   opacity: 1;
   z-index: 1;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.saved-img {
+  position: relative;
+}
+
+.saved-img img {
+  width: 300px;
+  border: 2px double #030344;
+  cursor: pointer;
+  position: relative;
+}
+
+.saved-img img:hover ~ .share-btns {
+  opacity: 1;
 }
