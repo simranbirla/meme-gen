@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  column-gap: 20px;
+  background-color: lightblue;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .header__main {
+  display: flex;
+  column-gap: 10px;
+  justify-content: flex-end;
+  padding: 10px;
+  align-self: flex-end;
+  margin: 10px 40px 10px 0px;
+}
+
+.header .header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h3 {
+  border: none;
+  text-align: center;
+  margin: 10px 0 10px 40px;
+}

@@ -77,6 +77,9 @@ const SvgText = (props) => {
               fontSize: `${props.size}px`,
               fill: `${props.color}`,
               cursor: "move",
+              fontStyle: `${props.style}`,
+              fontWeight: `${props.weight}`,
+              fontFamily: `${props.family}`,
             }}
             onMouseDown={(e) => mouseDown(e, inp)}
             onMouseUp={(e) => mouseUp(e, inp)}

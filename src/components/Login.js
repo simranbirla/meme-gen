@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { provider, auth } from "../firebase";
 import loginImg from "../images/login.svg";
-
+import "../Style/Login.css";
 const Login = ({ setSign, setUser, user }) => {
   const login = () => {
     auth
@@ -24,8 +24,7 @@ const Login = ({ setSign, setUser, user }) => {
   };*/
 
   return (
-    <div>
-      {console.log(user)}
+    <div className="login">
       <h3>Login here through google</h3>
       <img src={loginImg} alt="login" width="400px" height="400px" />
       <button onClick={login}>Login</button>

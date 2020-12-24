@@ -16,9 +16,10 @@ const Header = ({ setUser, setSign, sign }) => {
 
   return (
     <div className="header">
-      <div className="header__left"></div>
+      <div className="header__left">
+        <h3> Start Creating your memes!</h3>
+      </div>
       <div className="header__main">
-        <h1> Start Creating your memes!</h1>
         <Link to="/">Templates</Link>
         <Link to="upload">Upload</Link>
         <Link to="/saved">Saved </Link>

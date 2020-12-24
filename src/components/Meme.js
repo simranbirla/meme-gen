@@ -13,6 +13,9 @@ const Meme = (props) => {
   const [base64, setBase64] = useState();
   const [color, setColor] = useState("black");
   const [font, setFont] = useState(20);
+  const [style, setStyle] = useState("normal");
+  const [family, setFamily] = useState("arial");
+  const [weight, setWeight] = useState(400);
   const [progress, setProgress] = useState(0);
 
   const addInput = () => {
@@ -114,7 +117,7 @@ const Meme = (props) => {
     <>
       {props.user ? (
         <div className="meme">
-          <div className="meme__left">
+          <div className="meme__main">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -134,6 +137,9 @@ const Meme = (props) => {
                 color={color}
                 size={font}
                 imageRef={imageRef}
+                style={style}
+                weight={weight}
+                family={family}
               />
             </svg>
 
@@ -141,14 +147,15 @@ const Meme = (props) => {
             <button onClick={saveImg}>Save</button>
           </div>
 
-          <div className="meme__middle">
-            <Input number={inarr} inputChange={inputChange} />
-            <button onClick={addInput}>ADD</button>
-          </div>
           <div className="meme__right">
-            <div className="meme__right colors">
-              <h3>Select Font Color:</h3>
-              <ul className="meme__right colors-list">
+            <div className="meme__right-input">
+              <Input number={inarr} inputChange={inputChange} />
+              <button onClick={addInput}>ADD</button>
+            </div>
+
+            <div className="meme__right-colors">
+              <h3> Font Color:</h3>
+              <ul className="meme__right-colors-list">
                 <li onClick={fontColor} className="color black">
                   Black
                 </li>
@@ -170,9 +177,9 @@ const Meme = (props) => {
               </ul>
             </div>
 
-            <div className="meme__right font-size">
+            <div className="meme__right-font-size">
               <label>
-                Select a Font Size
+                Font Size:
                 <select onChange={fontSize}>
                   <option value="16">16</option>
                   <option value="10">10</option>
