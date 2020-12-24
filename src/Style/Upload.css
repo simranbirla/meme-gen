@@ -1,0 +1,31 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.upload input {
+  padding: 15px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  width: 400px;
+}
+
+.upload input:focus {
+  outline: 2px solid rgb(123, 210, 236);
+}
+
+.upload .localImage input {
+  display: none;
+}
+
+.upload .localImage label {
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid blue;
+}

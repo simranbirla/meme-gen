@@ -1,4 +1,5 @@
 import React from "react";
+import "../Style/Upload.css";
 
 const LocalImage = ({ setLocal }) => {
   const fileChange = (e) => {
@@ -9,16 +10,14 @@ const LocalImage = ({ setLocal }) => {
   };
   return (
     <div className="localImage">
-      <form className="localImage__middle form">
-        <label>
-          Select an Image
-          <input
-            type="file"
-            placeholder="Select image local file"
-            onChange={fileChange}
-          />
-        </label>
-      </form>
+      <label>
+        Select an Image
+        <input
+          type="file"
+          placeholder="Select image local file"
+          onChange={fileChange}
+        />
+      </label>
     </div>
   );
 };

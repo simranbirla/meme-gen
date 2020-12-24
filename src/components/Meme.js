@@ -117,6 +117,10 @@ const Meme = (props) => {
     <>
       {props.user ? (
         <div className="meme">
+          <div className="meme__left">
+            <button onClick={downloadImage}>Download</button>
+            <button onClick={saveImg}>Save</button>
+          </div>
           <div className="meme__main">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -142,9 +146,6 @@ const Meme = (props) => {
                 family={family}
               />
             </svg>
-
-            <button onClick={downloadImage}>Download</button>
-            <button onClick={saveImg}>Save</button>
           </div>
 
           <div className="meme__right">
@@ -152,7 +153,20 @@ const Meme = (props) => {
               <Input number={inarr} inputChange={inputChange} />
               <button onClick={addInput}>ADD</button>
             </div>
-
+            <div className="meme__right-style">
+              <i className="fas fa-bold" onClick={() => setWeight(900)}></i>
+              <i
+                className="fas fa-italic"
+                onClick={() => setStyle("italic")}
+              ></i>
+              <i
+                className="fab fa-neos"
+                onClick={() => {
+                  setStyle("normal");
+                  setWeight(400);
+                }}
+              ></i>
+            </div>
             <div className="meme__right-colors">
               <h3> Font Color:</h3>
               <ul className="meme__right-colors-list">
@@ -177,6 +191,19 @@ const Meme = (props) => {
               </ul>
             </div>
 
+            <div className="meme__right-family">
+              <label>
+                Font family:
+                <select onClick={(e) => setFamily(e.target.value)}>
+                  <option value="arial">Arial</option>
+                  <option value="fantasy">Fantasy</option>
+                  <option value="cursive">cursive</option>
+                  <option value="sans-serif"> Sans-serif</option>
+                  <option value="monospace">Monospace</option>
+                  <option value="georgia">Georgia</option>
+                </select>
+              </label>
+            </div>
             <div className="meme__right-font-size">
               <label>
                 Font Size:

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import NewImage from "./NewImage";
 import { Link } from "react-router-dom";
 import LocalImage from "./LocalImage";
-import "../Style/LocalImage.css";
+import "../Style/Upload.css";
 
 const Upload = () => {
   const [local, setLocal] = useState("");
   return (
-    <div>
+    <div className="upload">
       <NewImage link={local} setLink={setLocal} />
       <LocalImage local={local} setLocal={setLocal} />
       <Link

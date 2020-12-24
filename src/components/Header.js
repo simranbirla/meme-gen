@@ -21,7 +21,7 @@ const Header = ({ setUser, setSign, sign }) => {
       </div>
       <div className="header__main">
         <Link to="/">Templates</Link>
-        <Link to="upload">Upload</Link>
+        <Link to="/upload">Upload</Link>
         <Link to="/saved">Saved </Link>
         {!sign ? (
           <Link to="/">Login</Link>

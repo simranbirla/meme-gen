@@ -1,7 +1,7 @@
 .header {
   display: flex;
   column-gap: 20px;
-  background-color: lightblue;
+  background-color: #030344;
   align-items: center;
   justify-content: space-between;
 }
@@ -25,4 +25,29 @@
   border: none;
   text-align: center;
   margin: 10px 0 10px 40px;
+  color: lightblue;
+}
+
+.header__main a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  text-shadow: 1px 1px 1px rgb(3, 3, 68, 0.3);
+  padding: 5px 0;
+}
+
+.header__main a:hover {
+  text-decoration: underline;
+  opacity: 1;
+  color: lightblue;
+}
+
+.header__main button {
+  padding: 5px 20px;
+  color: #030344;
+  border: none;
+  background-color: lightblue;
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
 }

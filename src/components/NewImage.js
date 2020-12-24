@@ -1,5 +1,5 @@
 import React from "react";
-import "../Style/NewImage.css";
+import "../Style/Upload.css";
 
 const NewImage = ({ setLink }) => {
   const linkChange = (e) => {
@@ -8,9 +8,7 @@ const NewImage = ({ setLink }) => {
 
   return (
     <div className="newImage">
-      <form className="newImage form">
-        <input placeholder="Enter the link" onChange={linkChange} />
-      </form>
+      <input placeholder="Enter the link" onChange={linkChange} />
     </div>
   );
 };

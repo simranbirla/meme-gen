@@ -1,198 +1,165 @@
 .meme {
   display: flex;
   column-gap: 20px;
-  flex: 1;
-  margin: 30px 20px;
-  justify-content: space-evenly;
-  height: calc(100vh-150px);
-  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .meme__left {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
-  text-align: center;
-}
-
-.meme__left svg {
-  padding: 10px;
-  border: 5px outset black;
-  background-color: white;
-  width: 400px;
-  height: 400px;
+  row-gap: 10px;
+  padding: 20px;
+  width: 20%;
+  align-self: center;
 }
 
 .meme__left button {
   padding: 10px 30px;
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 20px;
-  color: rgb(253, 180, 235);
+  font-size: 15px;
+  background-color: #030344;
   border: none;
-  border-radius: 8px;
-  background-color: black;
+  color: lightblue;
   cursor: pointer;
-  box-shadow: 3px 3px rgba(224, 219, 224, 0.7);
-  transition: all 0.2s ease-in;
+  border-radius: 5px;
+  box-shadow: 0 3px #03034480;
 }
 
 .meme__left button:hover {
-  background-color: palevioletred;
-  color: black;
-  box-shadow: 3px 3px 10px 10px rgba(255, 220, 230, 0.75);
+  background-color: rgb(50, 0, 130);
+  color: white;
 }
 
-.meme__middle {
-  display: flex;
-  flex-direction: column;
-}
-
-.meme__middle .inputs {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-
-.meme__middle .inputs input {
-  font-size: 25px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-}
-
-.meme__middle .inputs input:focus {
+.meme__left button:focus,
+.meme__left button:active {
   outline: none;
 }
 
-.meme__middle button {
-  width: 60%;
-  margin: 20px auto;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: black;
-  color: rgb(253, 180, 235);
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.meme__right .meme__right.colors .meme__right.colors-list li {
-  list-style-type: none;
-  margin-bottom: 20px;
-  font-size: 20px;
-  display: flex;
-  column-gap: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  width: 60%;
-}
-
-.meme__right .meme__right.colors .meme__right.colors-list li::before {
-  content: "";
+.meme__left button:active {
+  box-shadow: none;
   position: relative;
-  height: 15px;
-  width: 15px;
-  display: block;
-  background-color: gray;
+  top: 3px;
 }
 
-.meme__right .meme__right.colors .meme__right.colors-list .color.green::before {
-  background-color: green;
+.meme__main {
+  align-self: center;
 }
 
-.meme__right .meme__right.colors .meme__right.colors-list .color.black::before {
-  background-color: black;
-}
-
-.meme__right .meme__right.colors .meme__right.colors-list .color.red::before {
-  background-color: red;
-}
-
-.meme__right
-  .meme__right.colors
-  .meme__right.colors-list
-  .color.yellow::before {
-  background-color: yellow;
-}
-
-.meme__right .meme__right.colors .meme__right.colors-list .color.white::before {
-  background-color: white;
-}
-
-.meme__right .meme__right.colors .meme__right.colors-list .color.blue::before {
-  background-color: blue;
-}
-
-h3 {
-  font-size: 2em;
-  margin-top: 0;
-  border-bottom: 3px double gray;
-}
-
-.meme__right .meme__right.font-size {
-  font-size: 25px;
-  font-weight: bolder;
-}
-
-.meme__right .meme__right.font-size select {
-  padding: 5px 20px;
-  font-size: 20px;
-  border: none;
-  margin: 0 10px;
+.meme__main svg {
+  width: 500px;
+  height: 500px;
+  background-color: azure;
+  margin: 30px;
+  padding: 1em;
 }
 
 .meme__right {
-  margin-top: 0;
+  background-color: rgba(20, 20, 20, 0.651);
+  color: white;
+  width: 25%;
+  margin: 20px 10px;
+  box-shadow: 2px 2px 2px rgba(4, 7, 39, 0.651);
 }
 
-@media (max-width: 900px) {
-  .meme {
-    flex-direction: column;
-    row-gap: 20px;
-    margin: 30px 20px;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-  }
-
-  .meme__left {
-    align-items: center;
-  }
-
-  .meme__right .meme__right.colors .meme__right.colors-list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    column-gap: 5px;
-  }
-
-  .meme__right .meme__right.colors .meme__right.colors-list li {
-    font-size: 15px;
-  }
+.meme__right-input {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
-@media (max-width: 520px) {
-  .meme__left svg {
-    width: 80%;
-    height: 300px;
-    margin: auto;
-  }
+.meme__right-input input {
+  padding: 10px;
+  margin: 5px 0;
+}
 
-  .meme__right .meme__right.colors .meme__right.colors-list {
-    flex-direction: column;
-  }
+.meme__right-input .inputs {
+  display: flex;
+  flex-direction: column;
+}
 
-  .meme__middle .inputs input {
-    width: 90%;
-    padding: 10px;
-    font-size: 20px;
-    margin: auto;
-  }
+.meme__right-input button {
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 10px;
+  border: none;
+}
 
-  .meme {
-    height: auto;
-  }
+.meme__right-colors {
+  text-align: center;
+}
+
+.meme__right-colors ul {
+  padding: 0;
+}
+
+.meme__right-colors ul li {
+  list-style: none;
+  position: relative;
+  margin: 5px 0;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.meme__right-colors ul li::before {
+  content: "";
+  width: 30px;
+  height: 10px;
+  background-color: lightgreen;
+  position: absolute;
+  left: 50px;
+}
+
+.meme__right-colors ul .black::before {
+  background-color: black;
+}
+
+.meme__right-colors ul .red::before {
+  background-color: red;
+}
+
+.meme__right-colors ul .yellow::before {
+  background-color: yellow;
+}
+
+.meme__right-colors ul .blue::before {
+  background-color: blue;
+}
+
+.meme__right-colors ul .white::before {
+  background-color: white;
+}
+
+.meme__right-colors ul .green::before {
+  background-color: green;
+}
+
+.meme__right-style {
+  padding: 10px;
+  background-color: lightskyblue;
+  margin: 10px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  font-size: 22px;
+}
+
+.meme__right-style i {
+  cursor: pointer;
+}
+
+.meme__right-family,
+.meme__right-font-size {
+  padding: 10px;
+  margin: 10px;
+  background-color: lightskyblue;
+  border-radius: 3px;
+  text-align: center;
+}
+
+select {
+  padding: 5px 10px;
+  cursor: pointer;
 }
