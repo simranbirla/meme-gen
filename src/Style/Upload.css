@@ -27,5 +27,32 @@
 .upload .localImage label {
   font-size: 20px;
   padding: 10px;
-  border: 2px solid blue;
+  border: 2px outset lightskyblue;
+  cursor: pointer;
+}
+
+.upload img {
+  border: 2px dashed #030344;
+  padding: 20px;
+}
+
+.upload button {
+  padding: 10px 30px;
+  font-weight: bolder;
+  font-size: 18px;
+  border: none;
+  background-color: #030344;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.upload button:hover {
+  background-color: indigo;
+}
+
+.upload button:active {
+  position: relative;
+  top: 4px;
+  box-shadow: none;
 }

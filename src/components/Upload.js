@@ -10,6 +10,7 @@ const Upload = () => {
     <div className="upload">
       <NewImage link={local} setLink={setLocal} />
       <LocalImage local={local} setLocal={setLocal} />
+      {local ? <img src={local} width="300px" height="300px" /> : null}
       <Link
         to={{
           pathname: `./photos/newImage`,
