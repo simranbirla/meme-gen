@@ -163,3 +163,31 @@ select {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+@media (max-width: 720px) {
+  .meme {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .meme__main svg {
+    width: 300px;
+    height: 300px;
+  }
+
+  .meme__left {
+    width: 80%;
+  }
+
+  .meme__right {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 300px) {
+  .meme__main svg {
+    width: 250px;
+    height: 250px;
+  }
+}
