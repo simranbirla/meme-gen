@@ -9,11 +9,11 @@
 
 ## Technologies used
 
-<p>ReactJS <img src="https://www.yaya.today/img/referral/Technologies/tech_react.png" alt="reactJs"> </p>
+<p>ReactJS <img src="https://www.yaya.today/img/referral/Technologies/tech_react.png" alt="reactJs" width=100px height=100px> </p>
 
 <p>
 Firebase for authentication and database
-<img src="https://cdn.icon-icons.com/icons2/691/PNG/512/google_firebase_icon-icons.com_61474.png" alt="firebase">
+<img src="https://cdn.icon-icons.com/icons2/691/PNG/512/google_firebase_icon-icons.com_61474.png" alt="firebase" width=100px height=100px >
 </p>
 
 <p>React Share</p>
