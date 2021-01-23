@@ -9,15 +9,15 @@
 
 ## Technologies used
 
-<p>ReactJS <img src="https://www.yaya.today/img/referral/Technologies/tech_react.png" alt="reactJs" width=100px height=100px> </p>
-
-<p>
-Firebase for authentication and database
-<img src="https://cdn.icon-icons.com/icons2/691/PNG/512/google_firebase_icon-icons.com_61474.png" alt="firebase" width=100px height=100px >
-</p>
-
-<p>React Share</p>
-
+<img src="https://img.shields.io/badge/reactjs-technology-blue" alt="reactjs">
+<img src="https://img.shields.io/badge/firebase-database-orange" alt="firebase">
+<img src="https://img.shields.io/badge/react%20router-npm-red" alt="react router" >
+<ul>
+<li> ReactJS </li>
+<li>Firebase </li>
+<li>React Share</li>
+<li>React Router</li> 
+</ul>
 ## Install
 
 ```sh
