@@ -42,6 +42,8 @@ npm run test
 
 - Website: https://simranbirla.netlify.app/
 - Github: [@simranbirla](https://github.com/simranbirla)
+- Twitter: [SimranBirla1](https://twitter.com/SimranBirla1)
+- LinkedIn: [Simran Birla](https://www.linkedin.com/in/simran-birla-31b3901a4/)
 
 ## Show your support
 
