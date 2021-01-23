@@ -2,10 +2,10 @@
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/SimranBirla1" target="_blank">
-    <img alt="Twitter: SimranBirla1" src="https://img.shields.io/badge/LinkedIn-connect-blue" />
+    <img alt="Twitter: SimranBirla1" src="https://img.shields.io/twitter/follow/SimranBirla1.svg?style=social" />
   </a>
   <a href="https://www.linkedin.com/in/simran-birla-31b3901a4/" target="_blank">
-    <img alt="LinkedIn: Simran Birla" src="https://img.shields.io/LinkedIn/follow/SimranBirla.svg?style=social" />
+    <img alt="LinkedIn: Simran Birla" src="https://img.shields.io/badge/LinkedIn-connect-blue" />
   </a>
 </p>
 
