@@ -12,6 +12,8 @@
 > Who doesn't love memes.As the name suggested this is a meme generator,which will help you create memes and share with your friends.You can start creating memes either by using the templates provided or by selecting any image of your choice.You can then edit that meme by adding text .You can download and share that meme on social media as well.
 
 ### ✨ [Demo](https://memegene.netlify.app/)
+ <img src="./meme.gif" alt="demo of meme gen" />
+
 
 ## Technologies used
 
@@ -24,12 +26,29 @@
 <li>React Share</li>
 <li>React Router</li> 
 </ul>
+
 ## Install
 
 ```sh
 npm install
 ```
+## Configuration
 
+In firebase.js file change the config to the one firebase has provided you.You can find the firebase config in project settings of web. 
+
+
+```sh
+const firebaseApp = firebase.initializeApp({
+  apiKey: "AI************************",
+  authDomain: "******.firebaseapp.com",
+  projectId: "********",
+  storageBucket: "*********.appspot.com",
+  messagingSenderId: "*********",
+  appId: "***********:web:cbc53abb337a313e8f5983",
+  measurementId: "**********",
+});
+
+```
 ## Usage
 
 ```sh
