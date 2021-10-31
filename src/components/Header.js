@@ -3,6 +3,8 @@ import "../Style/Header.css";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 
+
+// Signin and signout functionaly inplementation
 const Header = ({ setUser, setSign, sign }) => {
   const logout = () => {
     auth
@@ -14,6 +16,8 @@ const Header = ({ setUser, setSign, sign }) => {
       .catch((err) => alert(err));
   };
 
+  
+//   Header design
   return (
     <div className="header">
       <div className="header__left">
